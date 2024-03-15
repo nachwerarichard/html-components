@@ -1,0 +1,110 @@
+<html>
+    <header>
+<style>
+    .stepper-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid white;
+  width: 100%;
+  top: 20px;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #faf8f8;
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 6px;
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+  background-color:#1784eb;
+}
+
+
+.stepper-item.completed::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #1784eb;
+  width: 100%;
+  top: 20px;
+  left: 50%;
+  z-index: 3;
+}
+
+
+.stepper-item:first-child::before {
+  content: none;
+}
+.stepper-item:last-child::after {
+  content: none;
+}
+.step-name{
+    text-align: center;
+}
+</style>
+    </header>
+    <body>
+        <div class="stepper-wrapper">
+            <div class="stepper-item completed">
+              <div class="step-counter"><img src="img1.svg"/></div>
+              <div class="step-name"><h4>Step 1</h4>
+                <p>Update the CSS to style the descriptive text below each step as needed</p></div>
+            </div>
+            <div class="stepper-item completed">
+              <div class="step-counter"><img src="img2.svg"/></div>
+              <div class="step-name"><h4>Step 2</h4>
+                <p>Update the CSS to style the descriptive text below each step as needed</p></div>
+            </div>
+            <div class="stepper-item ">
+              <div class="step-counter"><img src="img3.svg"/></div>
+              <div class="step-name"><h4>Step 3</h4>
+                <p>Update the CSS to style the descriptive text below each step as needed</p></div>
+            </div>
+            <div class="stepper-item">
+              <div class="step-counter"><img src="img4.svg"/></div>
+              <div class="step-name"><h4>Step 4</h4>
+                <p>Update the CSS to style the descriptive text below each step as needed</p></div>
+            </div>
+          </div>
+    </body>
+</html>
